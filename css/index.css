@@ -24,6 +24,9 @@ body {
     margin: 0;
     padding: 0;
     font-size: calc(9px + 2vw);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* setting the font faimly and font weight */
@@ -35,11 +38,14 @@ body {
 header,
 h1,
 h3,
-.profileInfo>p:first-child {
+.profileInfo>p:first-child , button {
     font-family: 'Raleway', sans-serif;
 }
 
 /* header section */
+header {
+    width: 100%;
+}
 header>nav>ul {
     display: flex;
     list-style: none;
@@ -50,8 +56,10 @@ header>nav>ul {
 }
 
 .logo {
-    height: 60%;
-    width: 60%;
+    height: 85%;
+    width: 85%;
+    flex-shrink: 2;
+    flex-grow: 0.5;
 }
 
 .lilogo {
@@ -60,13 +68,19 @@ header>nav>ul {
 
 li:nth-child(2),
 li:nth-child(3) {
-    margin-right: 1rem;
+    margin-right: min(3vw , 3rem);
+}
+header > nav > ul > li> a {
+    text-decoration: none;
+    color: var(--VeryDarkBlue);
+    
 }
 
 /* fist section */
 .fistsection {
     display: flex;
     flex-flow: row wrap;
+    margin: 5rem 0rem;
 }
 
 .info {
@@ -85,14 +99,35 @@ h1 {
 .register {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .register>input {
-    flex-basis: 100%;
+    flex-basis: 90%;
+}
+input  {
+    border: 1px solid var(--VeryDarkBlue);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 3px 3px rgba(88, 89, 137, 0.15);
+}
+input:focus {
+    outline: none;
+}
+button {
+    border: none;
+    padding: 1rem;
+    background-color: var(--BrightBlue);
+    color:var(--LightGrayishBlue) ; 
+    font-size: 1rem;
+    font-weight: var(--w-700);
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 2px rgba(88, 89, 137, 0.45);
 }
 
 .register button {
-    flex-basis: 100%;
+    flex-basis: 90%;
 }
 
 .illustration {
@@ -109,7 +144,25 @@ h1 {
 .secondsection {
     display: flex;
     flex-flow: row wrap;
+    position: relative;
 }
+
+.wrapper {
+    background-color: var(--LightGrayishBlue);
+}
+
+#bg-curve,
+#bg-curve>img {
+    width: 100%;
+}
+
+#bg-curve>img {
+    height: 100%;
+}
+
+
+
+
 
 .moreinfo {
     flex-basis: 100%;
@@ -125,20 +178,53 @@ h3 {
 .seemore {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 3rem 0rem;
+}
+.container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--ModerateCyan);
+    padding-bottom: 0.3rem ;
 }
 
-.seemore>a {
+.container>a {
     text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--ModerateCyan);
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48 ; 
+    color: var(--ModerateCyan);
+    font-size: 1.3rem;
 }
 
 .comments {
     display: flex;
     flex-direction: column;
-
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding:  2rem;
+    box-shadow: 0px 0px 8px 2px rgba(88, 89, 137, 0.20);
+    margin-bottom: 4rem;
+}
+.comments>p {
+    margin: 0 0 0.3rem 0;
+}
+.comments>p::before {
+    content: url('/images/icon-quotes.svg'); 
+    display: block;
 }
 
 .profile {
     display: flex;
+    margin-top: 1rem;
 }
 
 .profile>img {
@@ -156,7 +242,7 @@ h3 {
 }
 
 .profileInfo>p {
-    margin: 0.3rem;
+    margin: 0rem 0 0.3rem 0.3rem;
 }
 
 
@@ -170,9 +256,128 @@ h3 {
     height: 100%;
 }
 
+/* third section */
+.thirdsection {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: var(--DesaturatedBlue);
+    color:var(--LightGrayishBlue);
+    justify-content: center;
+}
+.start {
+    flex-basis: 100%;
+}
+.start {
+    text-align: center;
+}
+.start>p {
+    margin: 2rem 0;
+}
+.register2 {
+    flex-basis: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* footer */
+footer {
+    background-color: var(--VeryDarkBlue);
+    color: var(--LightGrayishBlue);
+
+}
+footer> nav {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+}
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.logo2>img {
+    width: 100%;
+    height: 100%;
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-basis: 100%;
+}
+.contact>a {
+    text-decoration: none;
+    color: var(--LightGrayishBlue);
+}
+.contact>a:first-child::before {
+    content: url('/images/icon-phone.svg');
+    margin-right: .5rem;
+}
+.contact>a:nth-child(2)::before {
+    content: url('/images/icon-email.svg');
+    margin-right: .5rem;
+}
+.links1 , .links2 {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    gap: .5rem;
+    flex-basis: 100%;
+} 
+.social {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+    gap: 10%;
+} 
+.social > li {
+    margin: 0;
+}
+.links1>li>a ,.links2>li>a {
+    text-decoration: none;
+    color:var(--LightGrayishBlue);
+}
+i {
+    color: var(--LightGrayishBlue);
+    font-size: 0.9rem;
+    outline: 1px solid var(--LightGrayishBlue);
+    border-radius: 50%;
+    outline-offset: 0.6rem;
+}
+/* setting the order for the images and sections */
+.order1 {
+    order: 1;
+}
+
+.order2 {
+    order: 2;
+}
+
 /* setting the padding for the sections */
 header,
 .fistsection,
-.secondsection {
-    padding: 1rem;
+.moreinfo,
+.illustration2 , .thirdsection , footer {
+    padding: 1.5rem;
+}
+.thirdsection , footer{
+    padding: 4rem 1.5rem;
+}
+
+
+/* setting the max width for the elements */
+.fistsection , header {
+    max-width: 1440px;
+}
+
+@media only screen and (min-width:900px) {
+    /* fist section */
+
 }

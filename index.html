@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://kit.fontawesome.com/dab24688da.js" crossorigin="anonymous"></script>
   <title>Fylo landing page with two column layout</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -14,16 +16,16 @@
   <header>
     <nav>
       <ul>
-        <li class="lilogo"><a href=""></a><img class="logo" src="/images/logo.svg" alt="fylo logo"></li>
-        <li><a href=""></a>Features</li>
-        <li><a href=""></a>Team</li>
-        <li><a href=""></a>Sign In</li>
+        <li class="lilogo"><a href=""><img class="logo" src="/images/logo.svg" alt="fylo logo"></a></li>
+        <li><a href="">Features</a></li>
+        <li><a href="">Team</a></li>
+        <li><a href="">Sign In</a></li>
       </ul>
     </nav>
   </header>
-  <main>
+  <main class="main">
     <section class="fistsection">
-      <div class="info">
+      <div class="info order2">
         <h1>All your files in one secure location, accessible anywhere.</h1>
         <p>Fylo stores your most important files in one secure location. 
           Access them wherever you need, share and collaborate with friends, 
@@ -34,21 +36,34 @@
           <button type="submit">Get Started</button>
         </form>
       </div>
-      <div class="illustration">
+      <div class="illustration order1">
         <img src="/images/illustration-1.svg" alt="illustration for the section">
       </div>
     </section>
-    <section class="secondsection">
-      <div class="moreinfo">
+    <section class="secondsection" >
+      <picture id="bg-curve" class="order1">
+        <source srcset="/images/bg-curve-desktop.svg" media="(min-width: 800px)" >
+        <img src="/images/bg-curve-mobile.svg" alt="">
+      </picture>
+      
+      <div class="wrapper order2">
+        <div class="illustration2 ">
+        <img src="/images/illustration-2.svg" alt="second illustration">
+      </div>
+        <div class="moreinfo ">
         <h3>Stay productive, wherever you are </h3>
         <p> Never let location be an issue when accessing your files. Fylo has you 
             covered for all of your file storage needs.
-            Securely share files and folders with friends, family and colleagues for 
-            live collaboration. No email attachments required!
         </p>
-        <div class="seemore">
-        <a href="">See how Fylo works</a>
         
+            <p>Securely share files and folders with friends, family and colleagues for 
+            live collaboration. No email attachments required!</p>
+            
+        <div class="seemore">
+          <div class="container">
+            <a href="">See how Fylo works</a>
+          <span class="material-symbols-outlined">arrow_circle_right</span>
+          </div>
         </div>
         <div class="comments">
           <p>Fylo has improved our team productivity by an order of magnitude. Since 
@@ -64,11 +79,11 @@
           </div>
         </div>
       </div>
-      <div class="illustration2">
-        <img src="/images/illustration-2.svg" alt="second illustration">
+      
       </div>
     </section>
-    <section>
+      
+    <section class="thirdsection">
       <div class="start">
         <h3>Get early access today</h3>
         <p>It only takes a minute to sign up and our free starter tier is extremely generous. 
@@ -80,34 +95,35 @@
         <button type="submit">Get Started For Free</button>
       </form>
     </section>
-    <footer>
+    
+  </main>
+  <footer>
       <nav>
-        <a href="" class="logo2"></a>
-        <div>
+        <a href="" class="logo2"><img src="/images/logoWhite.svg" alt=""></a>
+        <div class="navigation">
           <div class="contact">
-            <a href="" >Phone: +1-543-123-4567</a>
+            <a href="tel:+1-543-123-4567" > Phone: +1-543-123-4567</a>
             <a href="mailto:abderrahmanedeffaf@gmail.com" >abderrahmanedeffaf@gmail.com</a>
           </div>
           <ul class="links1">
-            <li><a href=""></a>About Us</li>
-            <li><a href=""></a>Jobs</li>
-            <li><a href=""></a>Press</li>
-            <li><a href=""></a>Blog</li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Press</a></li>
+            <li><a href="">Blog</a></li>
           </ul>
           <ul class="links2">
-            <li><a href=""></a>Contact Us</li>
-            <li><a href=""></a>Terms</li>
-            <li><a href=""></a>Privacy</li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Privacy</a></li>
           </ul>
           <ul class="social">
-            <li><a href=""></a><span class="sr-only">facebook</span></li>
-            <li><a href=""></a><span class="sr-only"></span>twitter</li>
-            <li><a href=""></a><span class="sr-only">instagram</span></li>
+            <li><a href=""><i class="fa-brands fa-facebook" aria-hidden="true"></i><span class="sr-only">facebook</span></a></li>
+            <li><a href=""><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">twitter</span></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i><span class="sr-only">instagram</span></a></li>
           </ul>
         </div>
       </nav>
     </footer>
-  </main>
 <!--  Features
   Team
   Sign In
@@ -155,8 +171,5 @@
   Terms
   Privacy -->
 
-  <footer>
-  
-  </footer>
 </body>
 </html>
