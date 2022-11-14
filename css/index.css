@@ -94,6 +94,7 @@ h1 {
 
 .info p {
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .register {
@@ -106,14 +107,14 @@ h1 {
     flex-basis: 90%;
 }
 input  {
-    border: 1px solid var(--VeryDarkBlue);
+    border: none;
     padding: 1rem;
     border-radius: 5px;
     margin-bottom: 1rem;
     box-shadow: 0px 0px 3px 3px rgba(88, 89, 137, 0.15);
 }
 input:focus {
-    outline: none;
+    outline: 1px solid var(--VeryDarkBlue);
 }
 button {
     border: none;
@@ -128,6 +129,7 @@ button {
 
 .register button {
     flex-basis: 90%;
+    cursor: pointer;
 }
 
 .illustration {
@@ -139,6 +141,10 @@ button {
     width: 100%;
     height: 100%;
 }
+
+
+
+
 
 /* second section */
 .secondsection {
@@ -159,11 +165,6 @@ button {
 #bg-curve>img {
     height: 100%;
 }
-
-
-
-
-
 .moreinfo {
     flex-basis: 100%;
     display: flex;
@@ -174,7 +175,9 @@ h3 {
     font-weight: var(--w-700);
     text-align: center;
 }
-
+.moreinfo > p {
+    font-size: 1.2rem;
+}
 .seemore {
     display: flex;
     justify-content: center;
@@ -190,7 +193,7 @@ h3 {
 
 .container>a {
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--ModerateCyan);
 }
 
@@ -201,7 +204,8 @@ h3 {
         'GRAD' 0,
         'opsz' 48 ; 
     color: var(--ModerateCyan);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
 }
 
 .comments {
@@ -216,6 +220,7 @@ h3 {
 }
 .comments>p {
     margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
 }
 .comments>p::before {
     content: url('/images/icon-quotes.svg'); 
@@ -225,16 +230,20 @@ h3 {
 .profile {
     display: flex;
     margin-top: 1rem;
+    font-size: 1.2rem;
+    gap: 1rem;
 }
 
 .profile>img {
     border-radius: 50%;
     width: 20%;
+    aspect-ratio: 1/1;
 }
 
 .profileInfo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .profileInfo>p:first-child {
@@ -244,17 +253,17 @@ h3 {
 .profileInfo>p {
     margin: 0rem 0 0.3rem 0.3rem;
 }
-
-
-
 .illustration2 {
     flex-basis: 100%;
 }
 
-.illustration2 img {
+.illustration2> img {
     width: 100%;
     height: 100%;
 }
+
+
+
 
 /* third section */
 .thirdsection {
@@ -272,6 +281,7 @@ h3 {
 }
 .start>p {
     margin: 2rem 0;
+    font-size: 1.2rem;
 }
 .register2 {
     flex-basis: 90%;
@@ -284,7 +294,7 @@ h3 {
 footer {
     background-color: var(--VeryDarkBlue);
     color: var(--LightGrayishBlue);
-
+    width: 100%;
 }
 footer> nav {
     display: flex;
@@ -293,33 +303,38 @@ footer> nav {
 }
 .navigation {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-flow: row wrap;
     width: 100%;
     gap: 2rem;
 }
-
-.logo2>img {
-    width: 100%;
-    height: 100%;
+.logo2 {
+    flex-basis: 100%;
 }
+
 .contact {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     flex-basis: 100%;
+    list-style: none;
+    padding: 0;
 }
-.contact>a {
+
+.contact>li>a {
     text-decoration: none;
     color: var(--LightGrayishBlue);
+    width: 100%;
 }
-.contact>a:first-child::before {
+.contact>li:first-child>a::before {
     content: url('/images/icon-phone.svg');
     margin-right: .5rem;
 }
-.contact>a:nth-child(2)::before {
+.contact>li:last-child>a::before {
     content: url('/images/icon-email.svg');
     margin-right: .5rem;
+}
+.contact>li {
+    margin: 0;
 }
 .links1 , .links2 {
     display: flex;
@@ -336,6 +351,7 @@ footer> nav {
     justify-content: center;
     text-align: center;
     gap: 10%;
+    flex-basis: 100%;
 } 
 .social > li {
     margin: 0;
@@ -350,6 +366,15 @@ i {
     outline: 1px solid var(--LightGrayishBlue);
     border-radius: 50%;
     outline-offset: 0.6rem;
+    font-size: 2rem;
+}
+.links1>li , .links2>li{
+    margin: 0;
+}
+.contact>li>a,
+.links1>li>a,
+.links2>li>a {
+    font-size: 1.2rem;
 }
 /* setting the order for the images and sections */
 .order1 {
@@ -361,13 +386,13 @@ i {
 }
 
 /* setting the padding for the sections */
-header,
+
 .fistsection,
 .moreinfo,
-.illustration2 , .thirdsection , footer {
+.illustration2 , header>nav  {
     padding: 1.5rem;
 }
-.thirdsection , footer{
+.thirdsection , footer>nav {
     padding: 4rem 1.5rem;
 }
 
@@ -379,5 +404,92 @@ header,
 
 @media only screen and (min-width:900px) {
     /* fist section */
-
+    .fistsection {
+        gap: 1%;
+    }
+    .info, .illustration {
+        flex-basis: 49%;
+    }
+    h1 , .info>p{
+        text-align: left;
+    }
+    .register {
+        justify-content: flex-start;
+        gap: 2%;
+    }
+    .register>input {
+        flex-basis: 59%;
+    }
+    .register>button {
+        flex-basis: 39%;
+        height: 100%;
+    }
+    /* second section */
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    .illustration2 ,.moreinfo{
+        flex-basis: 49%;
+    }
+    .illustration2  {
+        order: 2;
+        width: 100%;
+        height: 50%;
+    }
+    h3 {
+        text-align: left;
+    }
+    .seemore {
+        justify-content: flex-start;
+    }
+    /* reversing the order */
+    .order1 {
+        order: 2;
+    }
+    .order2 {
+        order: 1;
+    }
+    /* third section */
+    .thirdsection {
+        gap: 1%;
+        align-items: flex-start;
+    }
+    .start , .register2  {
+        flex-basis: 49%;
+    }
+    .start > h3 {
+        margin: 0;
+    }
+    .start >p {
+        text-align: left;
+    }
+    /* footer section */
+    .navigation {
+        justify-content: space-between;
+        gap: 1%;
+    }
+    .contact , .links1 , .links2 , .social {
+        flex-basis: 49%;
+        margin: 0;
+    }
+    .social {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    i {
+    }
+}
+@media only screen and (min-width:1440px) {
+    .contact,
+    .links1,
+    .links2,
+    .social {
+            flex-basis: 24.25%;
+        }
+    .social {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 }
